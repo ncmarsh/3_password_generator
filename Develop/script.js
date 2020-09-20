@@ -18,7 +18,6 @@
 // * clicking the Generate Password
 // * writing the password to the screen
 //
-
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
@@ -29,6 +28,7 @@ function writePassword() {
   passwordText.value = password;
 }
 
+// The Generate Password button function
 function generatePassword() {
   var newPassword;
 
@@ -55,42 +55,55 @@ function generatePassword() {
   // choice array made up of those if true; iterate
   var letterPool = [];
 
-  // Did the user choose lowercase letters? (26)
+  // Did the user choose lowercase letters? (26) If yes, add to letterPool array.
   var lowLetters = "abcdefghijklmnopqrstuvwxyz";
   var lowLettersArr = lowLetters.split("");
 
   if (lowercase === true) {
-    letterPool.push(lowLettersArr);
-    console.log(letterPool);
+    letterPool.push(...lowLettersArr);
+    // console.log(letterPool);
   }
 
-  // Did the user choose uppercase letters? (26)
+  // Did the user choose uppercase letters? (26) If yes, add to letterPool array.
   var uppLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var uppLettersArr = uppLetters.split("");
 
   if (uppercase === true) {
-    letterPool.push(uppLettersArr);
-    console.log(letterPool);
+    letterPool.push(...uppLettersArr);
+    // console.log(letterPool);
   }
 
-  // Did the user choose numbers? (10)
+  // Did the user choose numbers? (10) If yes, add to letterPool array.
   var numChar = "0123456789";
   var numCharArr = numChar.split("");
 
   if (numbers === true) {
-    letterPool.push(numCharArr);
-    console.log(letterPool);
+    letterPool.push(...numCharArr);
+    // console.log(letterPool);
   }
 
-  // Did the user choose special characters? (28)
+  // Did the user choose special characters? (28) If yes, add to letterPool array.
   var specialChar = "~`!@#$%^&*()-_=+[]{}/?:;<>,.";
   var specialCharArr = specialChar.split("");
 
   if (special === true) {
-    letterPool.push(specialCharArr);
-    console.log(letterPool);
+    letterPool.push(...specialCharArr);
+    // console.log(letterPool);
   }
 
+  // Choose a random element from within the array and add to a new array 
+  console.log(letterPool);
+
+  var randArr = [];
+  for (var i = 0; i < length; i++) {
+    var randomLetters = letterPool[Math.floor(Math.random()*letterPool.length)];
+    randArr.push(randomLetters);
+    
+  }
+  console.log(randArr);
+
+  // Connect the elements from the array and return a value to be the newPassword 
+  var newPassword = randArr.join("");
   // Math.random(); default, would need to know the length selected, then choose randomly from choice array
 
   return newPassword;

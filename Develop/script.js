@@ -55,7 +55,9 @@ function generatePassword() {
   
   // If statement for user to try again if they do not select any character options
   if(lowercase === false && uppercase === false && numbers === false && special === false) {
-    
+    alert("Please choose at least one set of characters.");
+    newPassword = "Please try again";
+    return newPassword;
   }
   
   console.log(length);
@@ -103,19 +105,19 @@ function generatePassword() {
     // console.log(letterPool);
   }
 
-  // Choose a random element from within the array and add to a new array 
+  // Choose a random element from within the array and add to the new array 
   console.log(letterPool);
 
-  var randArr = [];
+  var randomArr = [];
   for (var i = 0; i < length; i++) {
     var randomLetters = letterPool[Math.floor(Math.random()*letterPool.length)];
-    randArr.push(randomLetters);
+    randomArr.push(randomLetters);
     
   }
-  console.log(randArr);
+  console.log(randomArr);
 
   // Connect the elements from the array and return a value to be the newPassword 
-  var newPassword = randArr.join("");
+  var newPassword = randomArr.join("");
 
   return newPassword;
 }

@@ -33,26 +33,38 @@ function generatePassword() {
   var newPassword;
 
   // Prompt asking length of the password 8-128 characters and store selected response
-  var length = prompt("How long would you like your password to be? Choose between 8-128.");
-  console.log(length);
+  // While loop for user to try again if they do not select a valid length
+  var length = "";
+
+  while(length < 8 || length > 128) {
+    alert("Please select a number between 8-128.");
+    var length = prompt("How long would you like your password to be?");
+    }
 
   // Confirm message to choose lowercase and store selected response
   var lowercase = confirm("Would you like lowercase letters?");
-  console.log(lowercase);
-
+  
   // Confirm message to choose uppercase and store selected response
   var uppercase = confirm("Would you like uppercase letters?");
-  console.log(uppercase);
-
+  
   // Confirm message to choose numeric and store selected response
   var numbers = confirm("Would you like numbers?");
-  console.log(numbers);
-
+  
   // Confirm message to choose special characters and store selected response
   var special = confirm("Would you like special characters?");
+  
+  // If statement for user to try again if they do not select any character options
+  if(lowercase === false && uppercase === false && numbers === false && special === false) {
+    
+  }
+  
+  console.log(length);
+  console.log(lowercase);
+  console.log(uppercase);
+  console.log(numbers);
   console.log(special);
 
-  // choice array made up of those if true; iterate
+  // Choice array made up of the elements if true; iterate
   var letterPool = [];
 
   // Did the user choose lowercase letters? (26) If yes, add to letterPool array.
@@ -104,7 +116,6 @@ function generatePassword() {
 
   // Connect the elements from the array and return a value to be the newPassword 
   var newPassword = randArr.join("");
-  // Math.random(); default, would need to know the length selected, then choose randomly from choice array
 
   return newPassword;
 }

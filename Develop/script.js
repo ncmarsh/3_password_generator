@@ -35,11 +35,11 @@ function generatePassword() {
   // Prompt asking length of the password 8-128 characters and store selected response
   // While loop for user to try again if they do not select a valid length
   var length = "";
-
-  while(length < 8 || length > 128) {
+  
+  while(length < 8 || length > 128 || isNaN(length) ) {
     alert("Please select a number between 8-128.");
     var length = prompt("How long would you like your password to be?");
-    }
+  }
 
   // Confirm message to choose lowercase and store selected response
   var lowercase = confirm("Would you like lowercase letters?");

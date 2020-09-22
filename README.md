@@ -41,6 +41,8 @@ Give it a try!
 
 ## Demo
 
+![Display](Assets/demo.gif)
+
 ## Roadmap
 
 To advance this Password Generator, there are a couple different pathways that I could explore: 

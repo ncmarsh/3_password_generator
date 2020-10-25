@@ -12,6 +12,7 @@ The Password Generator creates a random and secure password based upon user inpu
 1. [Demo](#Demo)
 1. [Roadmap](#Roadmap)
 1. [Links](#Links)
+1. [Contact](#Contact)
 1. [Contributing](#Contributing)
 1. [License](#License)
 
@@ -57,11 +58,15 @@ To advance this Password Generator, there are a couple different pathways that I
 - [Project Repository](https://github.com/ncmarsh/3_password_generator)
 - [Password Generator](https://ncmarsh.github.io/3_password_generator/)
 
-### Contributing
+## Contact
+
+- Nicole Marshall - [@ncmarsh](https://github.com/ncmarsh)
+
+## Contributing
 
 This is a personal project; no contributions are required at this time.
 
-### License
+## License
 
 No license granted.
 
